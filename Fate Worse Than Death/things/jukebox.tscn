@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sound/11-02-2022 30 day Horror Game Music Concept.wav" type="AudioStream" id=1]
+
+[node name="jukebox" type="AudioStreamPlayer" groups=["jukebox"]]
+stream = ExtResource( 1 )
+volume_db = -6.992
+autoplay = true

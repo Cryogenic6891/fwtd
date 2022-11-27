@@ -1,0 +1,583 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://characters/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/level2.gd" type="Script" id=2]
+[ext_resource path="res://things/battery.tscn" type="PackedScene" id=3]
+[ext_resource path="res://things/platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/bg.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=7]
+[ext_resource path="res://things/lamp.tscn" type="PackedScene" id=8]
+[ext_resource path="res://things/jukebox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/bottom.tscn" type="PackedScene" id=10]
+
+[sub_resource type="NavigationPolygon" id=6]
+vertices = PoolVector2Array( 1721, -573, 2914, -26, 2702, 311, 1725, 309, 1500, 18, 1018, -581, -683, 268, -725, -433 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 0, 4, 6, 7 ) ]
+outlines = [ PoolVector2Array( -725, -433, -683, 268, 1500, 18, 1725, 309, 2702, 311, 2914, -26, 1721, -573, 1018, -581 ) ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 2431.13, 161 )
+
+[node name="Main" type="Node2D" groups=["main"]]
+script = ExtResource( 2 )
+
+[node name="jukebox" parent="." instance=ExtResource( 9 )]
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( -80, 16 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 6 )
+
+[node name="Bg2" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 287, 3429 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_enabled = true
+script = ExtResource( 7 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -272, -20 )
+
+[node name="Navigation" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation"]
+navpoly = SubResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1400, 496 )
+shape = SubResource( 5 )
+
+[node name="bottom" parent="." instance=ExtResource( 10 )]
+position = Vector2( -800, 328 )
+
+[node name="bottom2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -736, 328 )
+
+[node name="bottom3" parent="." instance=ExtResource( 10 )]
+position = Vector2( -672, 328 )
+
+[node name="bottom4" parent="." instance=ExtResource( 10 )]
+position = Vector2( -608, 328 )
+
+[node name="bottom5" parent="." instance=ExtResource( 10 )]
+position = Vector2( -544, 328 )
+
+[node name="bottom6" parent="." instance=ExtResource( 10 )]
+position = Vector2( -480, 328 )
+
+[node name="bottom7" parent="." instance=ExtResource( 10 )]
+position = Vector2( -416, 328 )
+
+[node name="bottom8" parent="." instance=ExtResource( 10 )]
+position = Vector2( -352, 328 )
+
+[node name="bottom9" parent="." instance=ExtResource( 10 )]
+position = Vector2( -296, 328 )
+
+[node name="bottom10" parent="." instance=ExtResource( 10 )]
+position = Vector2( -232, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom11" parent="." instance=ExtResource( 10 )]
+position = Vector2( -168, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom12" parent="." instance=ExtResource( 10 )]
+position = Vector2( -104, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom13" parent="." instance=ExtResource( 10 )]
+position = Vector2( -40, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom14" parent="." instance=ExtResource( 10 )]
+position = Vector2( 24, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom15" parent="." instance=ExtResource( 10 )]
+position = Vector2( 88, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom16" parent="." instance=ExtResource( 10 )]
+position = Vector2( 152, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom17" parent="." instance=ExtResource( 10 )]
+position = Vector2( 216, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom18" parent="." instance=ExtResource( 10 )]
+position = Vector2( 272, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom19" parent="." instance=ExtResource( 10 )]
+position = Vector2( 336, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom20" parent="." instance=ExtResource( 10 )]
+position = Vector2( 400, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom21" parent="." instance=ExtResource( 10 )]
+position = Vector2( 464, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom22" parent="." instance=ExtResource( 10 )]
+position = Vector2( 528, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom23" parent="." instance=ExtResource( 10 )]
+position = Vector2( 592, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom24" parent="." instance=ExtResource( 10 )]
+position = Vector2( 656, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom25" parent="." instance=ExtResource( 10 )]
+position = Vector2( 720, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom26" parent="." instance=ExtResource( 10 )]
+position = Vector2( 784, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom27" parent="." instance=ExtResource( 10 )]
+position = Vector2( 840, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom28" parent="." instance=ExtResource( 10 )]
+position = Vector2( 904, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom29" parent="." instance=ExtResource( 10 )]
+position = Vector2( 968, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom30" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1032, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom31" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1096, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom32" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1160, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom33" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1224, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom34" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1288, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom35" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1352, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom36" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1408, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom37" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1472, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom38" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1536, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom39" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1600, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom40" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1664, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom41" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1728, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom42" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1792, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom43" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1856, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom44" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1920, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom45" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1976, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom46" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2040, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom47" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2104, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom48" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2168, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom49" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2232, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom50" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2296, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom51" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2360, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom52" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2424, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom53" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2488, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom54" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2544, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom55" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2608, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom56" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2672, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom57" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2736, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom58" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2800, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom59" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2864, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom60" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2928, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom61" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2992, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom62" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3056, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom63" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3112, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom64" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3176, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom65" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3240, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom66" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3304, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom67" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3368, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom68" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3432, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom69" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3496, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom70" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3560, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom71" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3624, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom72" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3680, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom73" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3744, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom74" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3808, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom75" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3872, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom76" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3936, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom77" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4000, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom78" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4064, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom79" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4128, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom80" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4192, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="bottom81" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4248, 328 )
+region_rect = Rect2( 0, 0, 64, 16 )
+
+[node name="Line2D9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2, 26 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 13, -2 )
+
+[node name="Line2D10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 156, 24 )
+spinning = true
+
+[node name="Line2D12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 251, 2 )
+scale = Vector2( 0.267857, 1 )
+points = PoolVector2Array( -64, 0, 3.73334, 0, 64, 0 )
+
+[node name="Line2D11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 335, 17 )
+spinning = true
+rotateSpeed = 0.005
+
+[node name="lamp" parent="." instance=ExtResource( 8 )]
+position = Vector2( 17, -12 )
+
+[node name="Line2D13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 624, 17 )
+scale = Vector2( 3.22024, 1 )
+
+[node name="Line2D14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 954.899, -44.5949 )
+rotation = -0.546288
+scale = Vector2( 1.48322, 1 )
+
+[node name="battery" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1002, -113 )
+
+[node name="Line2D15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1143, -102 )
+spinning = true
+rotateSpeed = 0.013
+
+[node name="Line2D16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1299, -102 )
+spinning = true
+rotateSpeed = 0.017
+
+[node name="Line2D17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1440, -102 )
+scale = Vector2( 0.5, 0.85 )
+
+[node name="Line2D49" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1221, -123 )
+scale = Vector2( 0.154761, 0.85 )
+
+[node name="Line2D18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1760, -102 )
+scale = Vector2( 3.20833, 1.1 )
+points = PoolVector2Array( -64, 0, 1.71429, -0.909088, 64, 0 )
+spinning = true
+rotateSpeed = -0.01
+
+[node name="battery2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1877.71, 128 )
+scale = Vector2( 1.17708, 1.1 )
+
+[node name="Line2D19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1785, 155 )
+scale = Vector2( 1.60417, 1.1 )
+points = PoolVector2Array( -64, 0, -0.623535, 0, 64, 0 )
+
+[node name="Line2D21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2105, 153 )
+spinning = true
+rotateSpeed = -0.05
+
+[node name="Line2D20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1967, 155 )
+spinning = true
+rotateSpeed = 0.05
+
+[node name="Line2D22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2036, 283 )
+
+[node name="Line2D23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2189, 303 )
+scale = Vector2( 0.279762, 1 )
+
+[node name="Line2D24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2282, 283 )
+scale = Vector2( 0.279762, 1 )
+
+[node name="Line2D25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2366, 303 )
+scale = Vector2( 0.279762, 1 )
+
+[node name="Line2D26" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2500, 263 )
+rotation = -0.455531
+scale = Vector2( 1.30655, 1 )
+
+[node name="Line2D27" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2656, 197 )
+rotation = -3.05433
+
+[node name="Line2D28" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2604, 135 )
+rotation = 0.202458
+scale = Vector2( 0.404762, 1 )
+
+[node name="Line2D29" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2680, 104 )
+rotation = -0.350811
+scale = Vector2( 0.404762, 1 )
+
+[node name="Line2D30" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2604, 59 )
+scale = Vector2( 0.404762, 1 )
+
+[node name="Line2D31" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2690, 14 )
+scale = Vector2( 0.404762, 1 )
+
+[node name="Line2D32" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2604, -18 )
+scale = Vector2( 0.404762, 1 )
+
+[node name="Line2D33" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2479, -57 )
+scale = Vector2( 0.79762, 1 )
+
+[node name="Line2D34" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2212.96, -102 )
+scale = Vector2( 2.94093, 1 )
+points = PoolVector2Array( -63.6343, 2, 64, 0 )
+
+[node name="lamp2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2166, -138 )
+
+[node name="Line2D35" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2045, -171 )
+scale = Vector2( 0.440476, 1 )
+
+[node name="Line2D36" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2105, -218 )
+scale = Vector2( 0.440476, 1 )
+
+[node name="Line2D37" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2029, -273 )
+scale = Vector2( 0.440476, 1 )
+
+[node name="Line2D42" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1517.5, -400 )
+scale = Vector2( 0.220238, 1 )
+
+[node name="Line2D43" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1440, -400 )
+scale = Vector2( 0.220238, 1 )
+
+[node name="Line2D44" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1358, -400 )
+scale = Vector2( 0.220238, 1 )
+
+[node name="Line2D45" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1277, -369 )
+scale = Vector2( 0.220238, 1 )
+
+[node name="lamp3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1015, -446 )
+scale = Vector2( 1.13988, 1 )
+endPoint = true
+
+[node name="Line2D46" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1215, -389 )
+scale = Vector2( 0.220238, 1 )
+points = PoolVector2Array( -72.6489, 2, 64, 0 )
+
+[node name="Line2D47" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1139.19, -389 )
+scale = Vector2( 0.265592, 1 )
+points = PoolVector2Array( -67.3149, 1, 64, 0 )
+
+[node name="battery3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1358, -428 )
+scale = Vector2( 1.17946, 1.25 )
+
+[node name="Line2D48" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1018, -409 )
+scale = Vector2( 0.777074, 1 )
+points = PoolVector2Array( -68.1079, 1, 63.5679, 1 )
+
+[node name="Line2D39" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1824, -307 )
+scale = Vector2( 0.440476, 1 )
+
+[node name="Line2D38" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1920, -273 )
+scale = Vector2( 0.440476, 1 )
+spinning = true
+rotateSpeed = -0.01
+
+[node name="Line2D40" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1737, -349 )
+scale = Vector2( 0.440476, 1 )
+spinning = true
+rotateSpeed = -0.01
+
+[node name="Line2D41" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1650, -400 )
+scale = Vector2( 0.440476, 1 )
+points = PoolVector2Array( -64, 0, 0, 0, 64, 0 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

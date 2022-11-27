@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/11-02-2022 30 day Horror Game Concepts Lamp Ambience.wav-96e84adcae378b3990189ebd7fb9c4ef.sample"
+
+[deps]
+
+source_file="res://Sound/11-02-2022 30 day Horror Game Concepts Lamp Ambience.wav"
+dest_files=[ "res://.import/11-02-2022 30 day Horror Game Concepts Lamp Ambience.wav-96e84adcae378b3990189ebd7fb9c4ef.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

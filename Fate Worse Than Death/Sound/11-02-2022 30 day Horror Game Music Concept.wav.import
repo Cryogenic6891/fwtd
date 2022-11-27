@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/11-02-2022 30 day Horror Game Music Concept.wav-847afdf694501fa4bcfadcc946da4cff.sample"
+
+[deps]
+
+source_file="res://Sound/11-02-2022 30 day Horror Game Music Concept.wav"
+dest_files=[ "res://.import/11-02-2022 30 day Horror Game Music Concept.wav-847afdf694501fa4bcfadcc946da4cff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

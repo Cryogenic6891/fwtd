@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/11-02-2022_30_day_Horror_Game_Concepts_p2.wav-76fffb8491f67edd104ffb7d35861c5b.sample"
+
+[deps]
+
+source_file="res://Sound/11-02-2022_30_day_Horror_Game_Concepts_p2.wav"
+dest_files=[ "res://.import/11-02-2022_30_day_Horror_Game_Concepts_p2.wav-76fffb8491f67edd104ffb7d35861c5b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=1

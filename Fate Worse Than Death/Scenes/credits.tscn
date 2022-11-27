@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/MetalMania-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/mainMenu.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[node name="mainMenu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="mainPanel" type="Panel" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CanvasLayer/mainPanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -101.0
+margin_top = 154.0
+margin_right = 90.0
+margin_bottom = 217.0
+custom_fonts/font = SubResource( 1 )
+text = "The End"
+align = 3
+
+[node name="play" type="Button" parent="CanvasLayer/mainPanel"]
+margin_left = 448.0
+margin_top = 284.0
+margin_right = 548.0
+margin_bottom = 304.0
+text = "Play"
+
+[node name="quit" type="Button" parent="CanvasLayer/mainPanel"]
+margin_left = 448.0
+margin_top = 334.0
+margin_right = 548.0
+margin_bottom = 354.0
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/mainPanel/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/mainPanel/quit" to="." method="_on_quit_pressed"]
