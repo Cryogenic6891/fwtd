@@ -7,6 +7,7 @@ onready var standing = preload("res://Art/pixil-frame-0 (35).png")
 onready var crouching = preload("res://Art/pixil-frame-0 (36).png")
 onready var anim = $AnimationTree
 onready var animMode = anim.get("parameters/playback")
+onready var steps = $AudioStreamPlayer
 
 var stairMovement = false
 var goingUp
@@ -20,6 +21,7 @@ var jumpStrength = 1.85
 
 var touching
 var gripping = false
+var running = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
@@ -30,9 +32,11 @@ func _physics_process(delta):
 		anim.set("parameters/idle/blend_position", velocity.x)
 		anim.set("parameters/run/blend_position", velocity.x)
 		animMode.travel("run")
+		running = true
 	else:
 		anim.set("parameters/idle/blend_position", velocity.x)
 		animMode.travel("idle")
+		running = false
 	move_and_slide(velocity*speed*delta, Vector2.UP)
 	velocity.y += gravity * delta
 	if velocity.y >= maxFall:
@@ -56,6 +60,17 @@ func _physics_process(delta):
 		sprite.texture = crouching
 	else:
 		pass
+
+func _process(delta):
+	if self.is_on_floor():
+		if running and steps.playing:
+			pass
+		elif running and not steps.playing:
+			steps.play()
+		else:
+			steps.stop()
+	else:
+		steps.stop()
 
 func jump():
 	pass

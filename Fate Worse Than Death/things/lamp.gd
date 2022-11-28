@@ -7,6 +7,7 @@ onready var enemy = get_tree().get_nodes_in_group("enemy")[0]
 onready var flashlight = get_tree().get_nodes_in_group("flashlight")[0]
 onready var lampAudio = preload("res://Sound/11-02-2022 30 day Horror Game Concepts Lamp Ambience.wav")
 onready var normalAudio = preload("res://Sound/11-02-2022 30 day Horror Game Music Concept.wav")
+onready var level2Audio = preload("res://Sound/Horror 2d Main Theme.wav")
 onready var currentLevel = get_node("/root/ScreenManager")
 onready var level2 = "res://Scenes/level2.tscn"
 onready var mainMenu = "res://Scenes/credits.tscn"
@@ -27,7 +28,10 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_body_exited(body):
 	if body == player:
-		jukebox.stream = normalAudio
+		if currentLevel.currentScene == "level1":
+			jukebox.stream = normalAudio
+		elif currentLevel.currentScene == "level2":
+			jukebox.stream = level2Audio
 		jukebox.play()
 		enemy.set_physics_process(true)
 		flashlight.batteryTimer.start()

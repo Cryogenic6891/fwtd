@@ -7,6 +7,7 @@ onready var enemy = get_tree().get_nodes_in_group("enemy")[0]
 onready var light = $Light2D/Area2D
 onready var switchLight = $Light2D
 onready var batteryTimer = $Timer
+onready var dim = $AudioStreamPlayer
 
 var battery = 100
 var rotationLook = Vector2.ZERO
@@ -24,6 +25,10 @@ func _physics_process(delta):
 	else:
 		light.monitoring = true
 		switchLight.color = Color.white
+	if battery < 25 and not dim.playing:
+		dim.play()
+	elif battery > 25:
+		dim.stop()
 
 func _on_Area2D_body_entered(body):
 	if body == enemy:
